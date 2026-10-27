@@ -1,0 +1,63 @@
+@mixin createEl($w: 100%, $h: 100%){
+    content: "";
+    display: block;
+    width: $w;
+    height: $h;
+}
+@mixin flex($FD: row, $JC: center, $AI: center){
+    display: flex;
+    flex-direction: $FD;
+    justify-content: $JC;
+    align-items: $AI;
+}
+@mixin centerAbsolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin distance($w: initial, $h: initial){
+    width: $w;
+    height:  $h;
+}
+@mixin position($p: absolute, $t: null, $r: null, $b: null, $l: null){
+    position: $p;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+}
+@mixin respondTo($breakPoint){
+  @if ($breakPoint == "xsm"){
+    /*350*/
+    @media (max-width: 1300px) {
+      @content;
+    }
+    /*450*/
+  } @else if ($breakPoint == "sm"){
+    @media (min-width: 371px) and (max-width: 1300px) {
+      @content;
+    }
+    /*650*/
+  } @else if ($breakPoint == "md"){
+    @media (min-width: 577px) and (max-width: 1300px) {
+      @content;
+    }
+    /*850*/
+  } @else if ($breakPoint == "lg"){
+    @media (min-width: 769px) and (max-width: 1300px) {
+      @content;
+    }
+    /*1050*/
+  } @else if ($breakPoint == "xl"){
+    @media (min-width: 992px) and (max-width: 1300px) {
+      @content;
+    }
+  }
+  /*1250*/
+  @else if ($breakPoint == "xxl"){
+    @media (min-width: 1181px) and (max-width: 1300px) {
+      @content;
+    }
+  }
+}

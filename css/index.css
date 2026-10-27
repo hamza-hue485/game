@@ -1,0 +1,270 @@
+.firstColor {
+  color: #719F3D;
+}
+
+.secondColor {
+  color: #EE5E00;
+}
+
+.subColor {
+  color: #169ebd;
+}
+
+html {
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Libre Baskerville", serif;
+  background: #8e9eab;
+  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.wClampLg {
+  width: clamp(175px, 35vw, 400px);
+}
+
+.wClampSm {
+  width: clamp(40px, 8vw, 80px);
+  height: auto;
+}
+
+.h2Clamp {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+}
+
+.h3Clamp {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.h4Clamp {
+  font-size: clamp(1.5rem, 1.5vw, 1.9rem);
+}
+
+.h5Clamp {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+}
+
+.pClamp {
+  font-size: clamp(0.88rem, 1.15vw, 0.98rem);
+}
+
+@keyframes moveDown1 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+}
+@keyframes moveDown2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(13px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(13px);
+  }
+}
+@keyframes moveDown3 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+@keyframes loadingAnimate {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+#Game {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1e528e), color-stop(50%, #728a7c), to(#e9ce5d));
+  background-image: linear-gradient(to bottom, #1e528e, #728a7c, #e9ce5d);
+  height: 100vh;
+}
+#Game nav {
+  background-color: indigo;
+}
+#Game .containerChicken {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#Game .containerChicken::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 22.5px;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  background-color: #333;
+}
+#Game .containerChicken .chicken {
+  position: relative;
+  width: 33.33%;
+  text-align: center;
+}
+#Game .containerChicken .chicken i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#Game .containerChicken .chicken img {
+  width: 100px;
+  position: relative;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Game .containerChicken .chicken img {
+    width: 75px;
+  }
+}
+#Game .containerChicken .chicken img {
+  /*450*/
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game .containerChicken .chicken img {
+    width: 90px;
+  }
+}
+#Game .containerChicken .chicken img {
+  /*1050*/
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Game .containerChicken .chicken img {
+    width: 100px;
+  }
+}
+#Game #Start {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding-block: 15px;
+}
+#Game #Basket {
+  width: 180px;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Game #Basket {
+    width: 150px;
+  }
+}
+#Game #Basket {
+  /*450*/
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game #Basket {
+    width: 175px;
+  }
+}
+#Game #Basket {
+  /*1050*/
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Game #Basket {
+    width: 200px;
+  }
+}
+#Game #Basket {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%);
+}
+#Game #Basket span {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%);
+}
+#Game .brokenEggsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  width: 100%;
+  z-index: 2;
+}
+#Game .brokenEggsContainer .brokenEgg {
+  position: relative;
+  width: 33.33%;
+  text-align: center;
+  display: none;
+}
+#Game .brokenEggsContainer .brokenEgg img {
+  width: 100px;
+  position: relative;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Game .brokenEggsContainer .brokenEgg img {
+    width: 75px;
+  }
+}
+#Game .brokenEggsContainer .brokenEgg img {
+  /*450*/
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game .brokenEggsContainer .brokenEgg img {
+    width: 90px;
+  }
+}
+#Game .brokenEggsContainer .brokenEgg img {
+  /*1050*/
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Game .brokenEggsContainer .brokenEgg img {
+    width: 100px;
+  }
+}
+#Game footer {
+  position: absolute;
+  bottom: -2.5%;
+  left: 0%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */

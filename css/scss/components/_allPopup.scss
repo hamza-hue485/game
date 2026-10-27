@@ -1,0 +1,130 @@
+@use "../abstracts/" as *;
+[class^="popup"]{
+    @include position($p: fixed, $t: 0, $l: 0);
+    width: 100%;
+    overflow-y: auto;
+    z-index: 3;
+    display: none;
+    background-color: rgba(0, 0, 0,0.5);
+    .box{
+        &.service{
+            background: #E0EAFC;  
+            background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); 
+            background: linear-gradient(to right, #CFDEF3, #E0EAFC);
+            width: 80%;
+            border-radius: 20px;
+            margin: 50px auto;
+        }
+        &.video{
+            width: 60%;
+            margin: 130px auto;
+        }
+        &.sectors{
+            @extend .service;
+            .container{
+                .item{
+                    background-color: #c5ddca;
+                    padding: 10px;
+                    height: 130px;
+                    img{
+                        width: 60px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                            background-color: #dfeee2;
+                    }
+                }
+            }
+        }
+        &.Languages{
+            @extend .service;
+            width: 35%;
+            @include respondTo("xsm"){
+                width: 75%;
+            };
+            @include respondTo("sm"){
+                width: 65%;
+            };
+            @include respondTo("md"){
+                width: 55%;
+            };
+            @include respondTo("lg"){
+                width: 45%;
+            };
+            @include respondTo("xl"){
+                width: 35%;
+            };
+            margin: initial;
+            @include position($p: absolute, $t: 0, $r: 0);
+            border-radius: 20px 0 0 20px;
+            .container{
+                .item{
+                    background-color: #c5ddca;
+                    padding: 10px;
+                    height: 130px;
+                    img{
+                        width: 60px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                            background-color: #dfeee2;
+                    }
+                }
+            }
+        }
+        @include position($p: relative);
+        .head{
+            i{
+                @include position($p: absolute, $t: 15px, $r: 15px);
+                cursor: pointer;
+            }
+            border-bottom: 2px solid $firstColor;
+            border-radius: 20px;
+        }
+        .body{
+            .part2{
+                text-align: center;
+                img{
+                    width: 80%;
+                    border-radius: 20px;
+                }
+            }
+            ol{
+                li{
+                    &::marker{
+                        color: $secondColor;
+                        font-weight: 400;
+                    }
+                }                    
+            }
+        }
+    }
+}
+.popupLanguages{
+    overflow-x: hidden;
+    .box{
+        transform: translate(100%);
+        transition: 0.7s;
+        &.show{
+        transform: translate(0%);
+        }
+        &.Languages{
+            section:nth-of-type(2n + 1) {
+                h2,i{
+                    color: $secondColor;
+                }
+                .special::after{
+                    background-color: $secondColor;
+                }
+            }
+            section:nth-of-type(2n) {
+                h2,i,.special::after{
+                    color: $firstColor;
+                }
+                .special::after{
+                    background-color: $firstColor;
+                }
+            }
+        }
+    }
+}

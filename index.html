@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive catch game built with JavaScript where you collect falling items using a bowl, featuring score tracking and local storage high scores.">
+    <meta name="keywords" content="JavaScript game, Catch game, web game, Front-End project">
+    <title>Drop Egg Game</title>
+    <link rel="shortcut icon" href="./Images/hen-right.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/plugins/all.min.css">
+    <link rel="stylesheet" href="./css/plugins/bootsrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+ </head>
+ <body class="overflow-hidden">
+    <div id="Game">
+        <nav class="mb-4">
+            <h4 class="h5Clamp py-3 text-center text-light fw-bold"> 
+                Score : <span class="score">0</span> |
+                <span class="text-danger">Life Score</span> : <span id="LifeScore">5</span> |
+                Highest Score : <span class="highestScore">0</span> |
+                Use mouse to control
+            </h4>
+        </nav>
+
+        <div class="containerChicken">
+         <div class="chicken">
+           <i class="fa-solid fa-egg text-light fw-bold fs-4 egg"></i>
+          <img src="Images/hen-right.png" class="img-fluid" alt="Chicken image">
+         </div> 
+         <div class="chicken">
+           <i class="fa-solid fa-egg text-light fw-bold fs-4 egg"></i>
+          <img src="Images/hen-right.png" class="img-fluid" alt="Chicken image">
+         </div> 
+         <div class="chicken">
+           <i class="fa-solid fa-egg text-light fw-bold fs-4 egg"></i>
+          <img src="Images/hen-right.png" class="img-fluid" alt="Chicken image">
+         </div> 
+        </div>
+
+        <div id="Start" class="bg-success text-center text-light">
+          <h5 class="h4Clamp">Start Game</h5>
+        </div>
+
+        <div id="Basket">
+          <img src="Images/basket2.png" class="img-fluid" alt="Basket image">
+          <span class="text-light fw-bolder fs-3 score">0</span>
+        </div>
+        
+        <div class="brokenEggsContainer">
+         <div class="brokenEgg">
+          <img src="Images/brokenEgg.png" class="img-fluid" alt="Broken Egg image">
+         </div> 
+         <div class="brokenEgg">
+          <img src="Images/brokenEgg.png" class="img-fluid" alt="Broken Egg image">
+         </div> 
+         <div class="brokenEgg">
+          <img src="Images/brokenEgg.png" class="img-fluid" alt="Broken Egg image">
+         </div> 
+        </div>
+
+        <footer class>
+          <img src="Images/Easter-Eggs.png" class="img-fluid" alt="Footer Image">
+        </footer>
+    </div>
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/index.js"></script>
+ </body>
+</html>
+

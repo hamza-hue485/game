@@ -1,0 +1,70 @@
+@use "../abstracts/" as *;
+
+#Home{
+
+    .part1{
+        .cd-headline.clip .cd-words-wrapper::after{
+            background-color: $secondColor;
+        }
+        .video{
+            a{
+                @include position($p: relative);
+                color: $firstColor;
+                text-decoration: none;
+                width: 45px;
+                height: 45px;
+                @include flex;
+                transition: 0.5s;
+                &::before{
+                    @include createEl($w: 0%, $h: 0%);
+                    background-color: $firstColor;
+                    border-radius: 100%;
+                    @include position($p: absolute, $t: 50%, $l: 50%);
+                    transform: translate(-50%, -50%);
+                    transition: 0.5s;            
+                }
+                i{
+                    @include position($p: relative);
+                }
+                &:hover{
+                    color: var(--bs-light); 
+                    &::before{
+                            @include createEl($w: 100%, $h: 100%);
+                    }
+                }
+            }
+        }
+    }
+    .arrow{
+        text-decoration: none;
+        display: block;
+        width: 25px;
+        height: 50px;
+        margin-inline: auto;
+        @include position($p: relative);
+        transform: translateY(100%);
+        z-index: 2;
+        >img{
+            width: 100%;
+            height: auto;
+            @include position($p: absolute, $t: 0px, $l: 0);
+            @for $i from 1 through 3{
+                &:nth-of-type(#{$i}){
+                    animation: moveDown#{$i} 2s infinite;
+                }
+            };
+                       
+        }
+                
+    }
+    .part2 {
+        .Globe{
+            @extend %wClampLg;
+        }
+    }
+    .wave{
+        width: 100%;
+        transform: rotateX(180deg);
+        @include position($p: absolute, $b: 0, $l: 0);
+    }
+}

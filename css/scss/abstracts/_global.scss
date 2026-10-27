@@ -1,0 +1,54 @@
+@use "./vars" as *;
+@use "./mixins" as *;
+html {
+  scroll-padding-top: 90px;
+}
+body{
+    font-family: "Libre Baskerville", serif;
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to right,#eef2f3,#8e9eab);
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+%wClampLg {
+  width: clamp(175px, 35vw, 400px);
+}
+
+%wClampSm {
+  width: clamp(40px, 8vw, 80px);
+  height: auto;
+}
+
+%h2Clamp{
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+}
+%h3Clamp {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+%h4Clamp {
+  font-size: clamp(1.5rem, 1.5vw, 1.9rem);
+}
+%h5Clamp {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+}
+
+%pClamp {
+  font-size: clamp(0.88rem, 1.15vw, 0.98rem);
+}
+
+.wClampLg { @extend %wClampLg; }
+.wClampSm { @extend %wClampSm; }
+.h2Clamp { @extend %h2Clamp; }
+.h3Clamp { @extend %h3Clamp; }
+.h4Clamp { @extend %h4Clamp; }
+.h5Clamp { @extend %h5Clamp; }
+.pClamp  { @extend %pClamp;  }
+
+

@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+#Why_Us{
+    .container{
+        @for $i from 1 through 3{
+            .part#{$i}{
+                .wrapper{
+                    .info{
+                        background: center/cover no-repeat;
+                        background-image: linear-gradient(0deg, rgb(30, 32, 34) 0%, transparent 75%), url("../Images/best#{$i}.jpg");
+                    }
+                }
+            }
+        };
+        .part{
+            .wrapper{
+                background-color: $secondColor;
+                border-radius: 10px;
+                max-width: 350px;
+                margin-inline: auto;
+                   .info{
+                        display: flex;
+                        flex-direction: column;
+                        color: var(--bs-light);
+                        height: 450px;
+                        border-radius: 10px;
+                        transition: 0.5s;
+                        &:hover{
+                            transform: translate(-10px, 10px);
+                        }
+                        h3{
+                            margin-top: auto;
+                        }
+                    }
+            }
+        }
+    }
+}

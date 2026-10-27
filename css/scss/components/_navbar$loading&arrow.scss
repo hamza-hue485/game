@@ -1,0 +1,128 @@
+@use "../abstracts/" as * ;
+nav.navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    &.scrolled{
+            background-color: rgb(255, 255, 255, 0.75);
+    }
+    .navbar-brand{
+        width: 9%;
+        @include respondTo("xsm") {
+            width: 18%;
+        }
+        @include respondTo("md") {
+            width: 13%;
+        }
+        @include respondTo("xl") {
+            width: 9%;
+        }
+    }
+    .navbar-collapse{
+        @include respondTo("xsm"){
+            background: #E0EAFC;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            border-radius: 20px;
+        }
+        @include respondTo("xl") {
+            background: transparent; 
+            border-radius: initial;
+        }
+        ul{
+             @include respondTo("xsm") {
+                    padding: 20px;
+                }
+            .nav-link{
+                position: relative;
+                font-size: 15px;
+                font-weight: bolder;
+                @include respondTo("xsm") {
+                    width: fit-content;
+                    margin-inline: auto;
+                }
+                &.active,
+                &:hover,
+                &:focus,
+                &.show{
+                    color: $firstColor;
+                }
+                &::after {
+                        @include createEl($w: 0, $h: 2px);
+                        background-color: $secondColor; 
+                        position: absolute;
+                        bottom: -6px;
+                        left: 50%;
+                        transform: translate(-50%);
+                        transition: width 0.5s ease; 
+                        border-radius: 50px;
+                    }
+                &:hover::after,
+                &.active::after{
+                    width: 100%;
+                }
+            }
+            .dropdown {
+                ul.dropdown-menu{
+                    background: #E0EAFC;  /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    a{
+                        transition: 0.5s;
+                        &:hover{
+                            border-radius: 20px;
+                            color: $secondColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.loading{
+        background: #E0EAFC;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #CFDEF3, #E0EAFC);
+        z-index: 3;
+        opacity: 1;
+        transition-duration: 0.75s;
+        &.hide{
+            opacity: 0;
+        }
+        img{
+            animation: loadingAnimate 0.45s infinite alternate;
+            @include respondTo("xsm"){
+                width: 55%;
+            }
+            @include respondTo("sm"){
+                width: 45%;
+            }
+            @include respondTo("md"){
+                width: 35%;
+            }
+            @include respondTo("lg") {
+                width: 25%;
+            }
+            @include respondTo("xl") {
+                width: initial;
+            }
+        }
+}
+.top{
+        cursor: pointer;
+        background-color: $firstColor;
+        border-radius: 10px 0 0 10px;
+        @include position($p: fixed, $t: 50%, $r: 0);
+        z-index: 1;
+        transform: translate(70%, -50%);
+        transition: 0.5s;
+        .content{
+            @include flex;        
+        }
+        &:hover{
+            transform: translate(0%, -50%);
+        }
+}
+

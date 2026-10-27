@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+#Video,
+#Language_Sectors .part1{
+    background: center/cover fixed;
+    height: 325px;
+    @include respondTo("xsm"){
+        height: 250px;
+    }
+    @include respondTo("lg"){
+        height: 300px;
+    }
+    @include respondTo("xl"){
+        height: 325px;
+    }
+   .icon{
+        i{
+            font-size: 70px;
+            cursor: pointer;
+            transform: scale(1);
+            transition-duration: 0.3s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+   }
+   .buttons{
+        button{
+            font-size: 15px;
+            transition: 0.5s;
+            transform: translateY(0px);
+            background-color: #fff;
+            color: $secondColor;
+            &:hover{
+                transform: translateY(-5px);
+                background-color: $secondColor;
+                color: #fff;
+            }
+        }
+   }
+}
+#Video{
+    background-image: radial-gradient(rgba(104, 183, 3, 0.8), rgba(48, 93, 0, 0.8)), url("../Images/video-bg.jpg");
+}
+#Language_Sectors .part1{
+    background-image: radial-gradient(rgba(104, 183, 3, 0.8), rgba(48, 93, 0, 0.8)), url("../Images/youth.jpg");
+}

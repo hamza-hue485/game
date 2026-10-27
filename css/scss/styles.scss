@@ -1,0 +1,95 @@
+@use "./abstracts" as *;
+
+#Game{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1e528e), color-stop(50%, #728a7c), to(#e9ce5d));
+    background-image: linear-gradient(to bottom, #1e528e, #728a7c, #e9ce5d);
+    height: 100vh;
+    nav{
+        background-color: indigo;
+    }
+    .containerChicken{
+        @include flex($FD: row, $JC: center, $AI: center);
+        @include position($p: relative);
+        &::before{
+            @include createEl($h: 22.5px);
+            @include position($p: absolute, $l: 0%, $b: 0%);
+            background-color: #333;
+        }
+        .chicken{
+            @include position($p: relative);
+            width: 33.33%;
+            text-align: center;
+            i{
+                @include position($p: absolute, $t: 50%, $l: 50%);
+                transform: translate(-50%, -50%);
+            }
+            img{
+                width: 100px;
+                @include position($p: relative);
+                @include respondTo("xsm"){
+                    width: 75px;
+                };
+                @include respondTo("lg"){
+                    width: 90px;
+                };
+                @include respondTo("xl"){
+                    width: 100px;
+                };
+            }
+        }
+    }
+    #Start{
+        cursor: pointer;
+        @include position($p: absolute, $t: 50%, $l: 0%);
+        transform: translateY(-50%);
+        width: 100%;
+        padding-block: 15px;
+    }
+    #Basket{
+        width: 180px;
+        @include respondTo("xsm"){
+            width: 150px;
+        };
+        @include respondTo("lg"){
+            width: 175px;
+        };
+        @include respondTo("xl"){
+            width: 200px;
+        };
+        @include position($p: absolute, $t: 60%, $l: 50%);
+        transform: translate(-50%);
+        span{
+            @include position($p: absolute, $t: 65%, $l: 50%);
+            transform: translate(-50%);
+        }
+    }
+    .brokenEggsContainer{
+        @include flex($FD: row, $JC: center, $AI: center);
+        @include position($p: absolute, $t: 80%, $l: 0%);
+        width: 100%;
+        z-index: 2;
+        .brokenEgg{
+            @include position($p: relative);
+            width: 33.33%;
+            text-align: center;
+            display: none;
+            img{
+                width: 100px;
+                @include position($p: relative);
+                @include respondTo("xsm"){
+                    width: 75px;
+                };
+                @include respondTo("lg"){
+                    width: 90px;
+                };
+                @include respondTo("xl"){
+                    width: 100px;
+                };
+            }
+        }
+    }
+    footer{
+        @include position($p: absolute, $b: -2.5%, $l: 0%);
+        width: 100%;
+    }
+}
