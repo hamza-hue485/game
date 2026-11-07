@@ -10,15 +10,20 @@
     .containerChicken{
         @include flex($FD: row, $JC: center, $AI: center);
         @include position($p: relative);
+        height: 15%;
         &::before{
-            @include createEl($h: 22.5px);
+            @include createEl($h: 20px);
             @include position($p: absolute, $l: 0%, $b: 0%);
             background-color: #333;
         }
         .chicken{
-            @include position($p: relative);
-            width: 33.33%;
-            text-align: center;
+            @include position($p: absolute, $t:0);
+            transform: translateX(-50%);
+            @for $i from 0 through 3{
+                &:nth-of-type(#{$i}){
+                    left: #{$i * 25%};
+                }
+            }
             i{
                 @include position($p: absolute, $t: 50%, $l: 50%);
                 transform: translate(-50%, -50%);
@@ -64,14 +69,19 @@
         }
     }
     .brokenEggsContainer{
-        @include flex($FD: row, $JC: center, $AI: center);
-        @include position($p: absolute, $t: 80%, $l: 0%);
+       @include flex($FD: row, $JC: center, $AI: center);
+        @include position($p: absolute, $b: 8%);
+        height: 15%;
         width: 100%;
         z-index: 2;
         .brokenEgg{
-            @include position($p: relative);
-            width: 33.33%;
-            text-align: center;
+            @include position($p: absolute, $t:0);
+            transform: translateX(-50%);
+            @for $i from 0 through 3{
+                &:nth-of-type(#{$i}){
+                    left: #{$i * 25%};
+                }
+            }
             display: none;
             img{
                 width: 100px;
