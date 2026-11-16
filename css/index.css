@@ -123,13 +123,35 @@ h6 {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 15%;
+  height: 95px;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Game .containerChicken {
+    height: 73px;
+  }
+}
+#Game .containerChicken {
+  /*450*/
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game .containerChicken {
+    height: 85px;
+  }
+}
+#Game .containerChicken {
+  /*1050*/
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Game .containerChicken {
+    height: 95px;
+  }
 }
 #Game .containerChicken::before {
   content: "";
   display: block;
   width: 100%;
-  height: 20px;
+  height: 25px;
   position: absolute;
   bottom: 0%;
   left: 0%;
@@ -157,6 +179,29 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 25px;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Game .containerChicken .chicken i {
+    font-size: 15px;
+  }
+}
+#Game .containerChicken .chicken i {
+  /*450*/
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game .containerChicken .chicken i {
+    font-size: 20px;
+  }
+}
+#Game .containerChicken .chicken i {
+  /*1050*/
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Game .containerChicken .chicken i {
+    font-size: 25px;
+  }
 }
 #Game .containerChicken .chicken img {
   width: 100px;
@@ -199,15 +244,23 @@ h6 {
 }
 @media (max-width: 1300px) {
   #Game #Basket {
-    width: 150px;
+    width: 75px;
   }
 }
 #Game #Basket {
   /*450*/
 }
+@media (min-width: 371px) and (max-width: 1300px) {
+  #Game #Basket {
+    width: 100px;
+  }
+}
+#Game #Basket {
+  /*650*/
+}
 @media (min-width: 769px) and (max-width: 1300px) {
   #Game #Basket {
-    width: 175px;
+    width: 140px;
   }
 }
 #Game #Basket {
@@ -215,7 +268,7 @@ h6 {
 }
 @media (min-width: 992px) and (max-width: 1300px) {
   #Game #Basket {
-    width: 200px;
+    width: 180px;
   }
 }
 #Game #Basket {
@@ -229,6 +282,37 @@ h6 {
   top: 65%;
   left: 50%;
   transform: translate(-50%);
+  font-size: 28px;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Game #Basket span {
+    font-size: 11px;
+  }
+}
+#Game #Basket span {
+  /*450*/
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  #Game #Basket span {
+    font-size: 16px;
+  }
+}
+#Game #Basket span {
+  /*650*/
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game #Basket span {
+    font-size: 22px;
+  }
+}
+#Game #Basket span {
+  /*1050*/
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Game #Basket span {
+    font-size: 28px;
+  }
 }
 #Game .brokenEggsContainer {
   display: flex;

@@ -4,14 +4,7 @@ let eggs = $(".egg"),
     $basket = $("#Basket"),
     score = 0;
 $(window).mousemove(function (e) {
-    let distanceX = e.pageX,
-        basketEl = $("#Basket"),
-        halfOfBasket = basketEl.outerWidth(true) / 2; 
-    if(distanceX >= halfOfBasket && distanceX <= $(window).width() - halfOfBasket){
-            basketEl.offset({
-            left: distanceX - halfOfBasket,
-        }); 
-    };
+    moveBasket(e.pageX)
 });
 highestScore();
 /************************toStart***********************/
@@ -22,3 +15,20 @@ $("#Start").click(function () {
     });
     $("h5", this).text("Start Game");
 });
+/***********************************on tablet and phone */
+const gameArea = document.getElementById("Game");
+
+gameArea.addEventListener("touchmove", function (e) {
+    e.preventDefault(); 
+    let touch = e.touches[0];
+    if (touch) {
+        moveBasket(touch.pageX);
+    }
+}, { passive: false });
+
+gameArea.addEventListener("touchstart", function (e) {
+    let touch = e.touches[0];
+    if (touch) {
+        moveBasket(touch.pageX);
+    }
+}, { passive: false });

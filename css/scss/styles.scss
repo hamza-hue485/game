@@ -10,9 +10,18 @@
     .containerChicken{
         @include flex($FD: row, $JC: center, $AI: center);
         @include position($p: relative);
-        height: 15%;
+        height: 95px;
+        @include respondTo("xsm"){
+            height: 73px;
+        };
+        @include respondTo("lg"){
+            height: 85px;
+        };
+        @include respondTo("xl"){
+            height: 95px;
+        };
         &::before{
-            @include createEl($h: 20px);
+            @include createEl($h: 25px);
             @include position($p: absolute, $l: 0%, $b: 0%);
             background-color: #333;
         }
@@ -27,6 +36,16 @@
             i{
                 @include position($p: absolute, $t: 50%, $l: 50%);
                 transform: translate(-50%, -50%);
+                font-size: 25px;
+                @include respondTo("xsm"){
+                    font-size: 15px;
+                };
+                @include respondTo("lg"){
+                    font-size: 20px;
+                };
+                @include respondTo("xl"){
+                    font-size: 25px;
+                };
             }
             img{
                 width: 100px;
@@ -53,19 +72,35 @@
     #Basket{
         width: 180px;
         @include respondTo("xsm"){
-            width: 150px;
+            width: 75px;
+        };
+        @include respondTo("sm"){
+            width: 100px;
         };
         @include respondTo("lg"){
-            width: 175px;
+            width: 140px;
         };
         @include respondTo("xl"){
-            width: 200px;
+            width: 180px;
         };
         @include position($p: absolute, $t: 60%, $l: 50%);
         transform: translate(-50%);
         span{
             @include position($p: absolute, $t: 65%, $l: 50%);
             transform: translate(-50%);
+            font-size: 28px;
+            @include respondTo("xsm"){
+                font-size: 11px;
+            };
+            @include respondTo("sm"){
+                font-size: 16px;
+            };
+            @include respondTo("lg"){
+                font-size: 22px;
+            };
+            @include respondTo("xl"){
+                font-size: 28px;
+            };
         }
     }
     .brokenEggsContainer{
